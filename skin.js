@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 6.1.11/18043
 // Filename: Skin.ggsk
-// Generated 2021-04-22T11:25:38
+// Generated 2021-04-23T09:43:48
 
 function pano2vrSkin(player,base) {
 	var me=this;
@@ -136,10 +136,10 @@ function pano2vrSkin(player,base) {
 		}
 		me._menuizq.ggUpdatePosition=function (useTransition) {
 		}
-		el=me._instruc=document.createElement('div');
-		els=me._instruc__img=document.createElement('img');
-		els.className='ggskin ggskin_instruc';
-		hs=basePath + 'images/instruc.png';
+		el=me._instrc=document.createElement('div');
+		els=me._instrc__img=document.createElement('img');
+		els.className='ggskin ggskin_instrc';
+		hs=basePath + 'images/instrc.png';
 		els.setAttribute('src',hs);
 		els.ggNormalSrc=hs;
 		els.setAttribute('style','position: absolute;top: 0px;left: 0px;width: 100%;height: 100%;-webkit-user-drag:none;pointer-events:none;;');
@@ -148,24 +148,24 @@ function pano2vrSkin(player,base) {
 		player.checkLoaded.push(els);
 		el.appendChild(els);
 		el.ggSubElement = els;
-		el.ggId="Instruc";
-		el.ggDx=-3.04;
-		el.ggDy=-10.18;
+		el.ggId="Instrc";
+		el.ggDx=-3.72;
+		el.ggDy=-8.94;
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
 		el.ggVisible=false;
 		el.className="ggskin ggskin_image ";
 		el.ggType='image';
 		hs ='';
-		hs+='height : 74.9656%;';
+		hs+='height : 75.5158%;';
 		hs+='left : -10000px;';
 		hs+='position : absolute;';
 		hs+='top : -10000px;';
 		hs+='visibility : hidden;';
-		hs+='width : 73.0186%;';
+		hs+='width : 73.3559%;';
 		hs+='pointer-events:auto;';
 		el.setAttribute('style',hs);
 		el.style[domTransform + 'Origin']='50% 50%';
-		me._instruc.ggIsActive=function() {
+		me._instrc.ggIsActive=function() {
 			if ((this.parentNode) && (this.parentNode.ggIsActive)) {
 				return this.parentNode.ggIsActive();
 			}
@@ -177,7 +177,7 @@ function pano2vrSkin(player,base) {
 			}
 			return player.getCurrentNode();
 		}
-		me._instruc.ggUpdatePosition=function (useTransition) {
+		me._instrc.ggUpdatePosition=function (useTransition) {
 			if (useTransition==='undefined') {
 				useTransition = false;
 			}
@@ -193,7 +193,7 @@ function pano2vrSkin(player,base) {
 					this.style.top=((this.ggDy * ph)/100.0 + ph/2 - h/2) + 'px';
 			}
 		}
-		me._menuizq.appendChild(me._instruc);
+		me._menuizq.appendChild(me._instrc);
 		el=me._btninstr=document.createElement('div');
 		els=me._btninstr__img=document.createElement('img');
 		els.className='ggskin ggskin_btninstr';
@@ -244,10 +244,10 @@ function pano2vrSkin(player,base) {
 			return player.getCurrentNode();
 		}
 		me._btninstr.onclick=function (e) {
-			me._instruc.ggVisible = !me._instruc.ggVisible;
-			var flag=me._instruc.ggVisible;
-			me._instruc.style[domTransition]='none';
-			me._instruc.style.visibility=((flag)&&(Number(me._instruc.style.opacity)>0||!me._instruc.style.opacity))?'inherit':'hidden';
+			me._instrc.ggVisible = !me._instrc.ggVisible;
+			var flag=me._instrc.ggVisible;
+			me._instrc.style[domTransition]='none';
+			me._instrc.style.visibility=((flag)&&(Number(me._instrc.style.opacity)>0||!me._instrc.style.opacity))?'inherit':'hidden';
 		}
 		me._btninstr.ggUpdatePosition=function (useTransition) {
 			if (useTransition==='undefined') {
@@ -347,8 +347,8 @@ function pano2vrSkin(player,base) {
 		el.appendChild(els);
 		el.ggSubElement = els;
 		el.ggId="Fondo";
-		el.ggDx=0.23;
-		el.ggDy=0.37;
+		el.ggDx=2.1028;
+		el.ggDy=0.746269;
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
 		el.ggVisible=true;
 		el.className="ggskin ggskin_image ";
@@ -721,15 +721,17 @@ function pano2vrSkin(player,base) {
 		el.appendChild(els);
 		el.ggSubElement = els;
 		el.ggId="Fondo";
+		el.ggDx=0;
+		el.ggDy=0;
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
 		el.ggVisible=true;
 		el.className="ggskin ggskin_image ";
 		el.ggType='image';
 		hs ='';
 		hs+='height : 100%;';
-		hs+='left : 0px;';
+		hs+='left : -10000px;';
 		hs+='position : absolute;';
-		hs+='top : 0px;';
+		hs+='top : -10000px;';
 		hs+='visibility : inherit;';
 		hs+='width : 100%;';
 		hs+='pointer-events:auto;';
@@ -748,6 +750,20 @@ function pano2vrSkin(player,base) {
 			return player.getCurrentNode();
 		}
 		me._fondo.ggUpdatePosition=function (useTransition) {
+			if (useTransition==='undefined') {
+				useTransition = false;
+			}
+			if (!useTransition) {
+				this.style[domTransition]='none';
+			}
+			if (this.parentNode) {
+				var pw=this.parentNode.clientWidth;
+				var w=this.offsetWidth;
+					this.style.left=((this.ggDx * pw)/100.0 + pw/2 - w/2) + 'px';
+				var ph=this.parentNode.clientHeight;
+				var h=this.offsetHeight;
+					this.style.top=((this.ggDy * ph)/100.0 + ph/2 - h/2) + 'px';
+			}
 		}
 		me._inicio.appendChild(me._fondo);
 		el=me._btniniciar=document.createElement('div');
@@ -768,7 +784,7 @@ function pano2vrSkin(player,base) {
 		el.appendChild(els);
 		el.ggSubElement = els;
 		el.ggId="BtnIniciar";
-		el.ggDx=-0.11;
+		el.ggDx=-0.09;
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
 		el.ggVisible=true;
 		el.className="ggskin ggskin_button ";
